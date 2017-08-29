@@ -15,8 +15,8 @@ Since this repository primarily contains LaTeX source code, the Travis CI
 configuration for it will compile the source code and automatically release a
 PDF of the source code whenever the last commit is associated with a [Git
 Tag](https://git-scm.com/book/en/v2/Git-Basics-Tagging). As such, this will
-cause a PDF file to become available in the listing of
-the [Releases](https://github.com/Allegheny-Computer-Science-280-F2017/cs111-F2017-syllabus/releases)
+cause a PDF file to become available in the listing of the
+[Releases](https://github.com/Allegheny-Computer-Science-280-F2017/cs280-F2017-syllabus/releases)
 for this repository. All release numbers in this repository adhere to the
 [Semantic Versioning](http://semver.org/) standard.
 

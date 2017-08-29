@@ -1,0 +1,15 @@
+before_install:
+- sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends latexmk
+  texlive-fonts-extra texlive-fonts-recommended texlive-latex-base texlive-latex-extra
+  texlive-latex-recommended
+script:
+- mkdir _build
+- latexmk -pdf -outdir=_build cs280F2017_syllabus.tex
+deploy:
+  provider: releases
+  api_key:
+    secure: XGAfEDq4iUaDKMShHLxsGRoxVRwIIpWhhHaAyzhnA6TH92plITDJ05ZYaA0/K1KhUvGM05X3UDz16E+g/oNCaa0j0HmbXm1hZWSCR0k6ccRi8hwGy+U2Tb3JVVoqVc/r8+NYX3Wl78VJuujlOl25n4tpqKWrD0UrRPdSdxCN2O7cGlxJGB/ZKTVCoDnRkf1Bx8CHwphZ5SFeu4ncv88iWNREZcKYB9deA3sp9C9TWJc8Dhvps9pcwF6EcKukemrKjpST9xFioxsMirM7vWNjP6JIT06ODYcywNS+4QerFozIoR4VXEK9qNf6n+M8UheY8TnhvdNevzxPZmpLBculMNrfYKV8L7cPhEBpqugx8blIRNK2FSTZMgvr7OOXbeFTczf1PppyXXowr56NS67iDdPB1l/ITsgbBmtD2ZktKRwZO+3LqX1kntaLSwZxzx6TkditaSOe53/BJNE80+dwNdQmdcDfurTFxr8/eX1oAvOHF7eayt6G2FYX34plr2BsHS1jw3P+Y8F9nW+UVgT4WMLbv5kv43wEHCkadYMJLA0gB7mvBOEVZv6DaR46oRlW7ioSDtJXke3pimSkJo7IYAHrabLcNKML4fi6bN0INjVDuzS7j9fpmQMhYo9ZQaHyZ3IDpo+X3XpRZzbRElaVdIfMH4A9Ea5wR9JQnkPahdg=
+  file: cs280F2017_syllabus.pdf
+  skip_cleanup: true
+  on:
+    tags: true
